@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link rel="shortcut icon" type="png" href="img/v.png"> -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certichain</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <!--Fav-icon------------------------------>
+    <link rel="shortcut icon" href="images/fav-icon.png" />
+    <!--poppins-font-family------------------->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--using-Font-Awesome-------------------->
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <!-- Pop-up msg -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+
+    <!-- floating button to the top -->
+    <a href="#" id="scroll"><span></span></a>
+
+    <header>
+        <div class="header-wrapper">
+            <a href="index.html" class="logo">
+                <!-- <img src="img/v.png" alt="Logo" loading="lazy"/> -->
+                <h3>Certichain</h3>
+            </a>
+
+            <div class="nav d-lg">
+                <h2><a href="#">Home</a></h2>
+                <h2><a href="#why">About</a></h2>
+                <!-- <h2><a href="./Course/Courses.html">Courses</a></h2> -->
+                <!-- <h2><a href="./feature-pg/feature.html">Features</a></h2> -->
+                <h2><a href="#welcome">Features</a></h2>
+                <h2><a href="./log in/verify.html">Verify</a></h2>
+                <!-- <h2><a href="./contact/contact.html">Contact</a></h2> -->
+                <h2><a href="#details">Contact</a></h2>
+
+            </div>
+
+
+            <div class="nav d-lg">
+                <h2 style="padding-top:0;"><a href="./log in/Login.html" class="btn sign-in">Login</a></h2>
+                <h2 style="padding-top:0; margin-right:50px;"><a href="./register/Register.html" class="btn sign-in">Register</a></h2>
+            </div>
+
+            <div class="dropdown-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="70%" fill="currentColor" class="bi bi-list dropdown-btn"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+                <div class="dropdown-content">
+                    <h2><a href="#">Home</a></h2>
+                    <h2><a href="#welcome">About</a></h2>
+                    <h2><a href="./Course/Courses.html">Courses</a></h2>
+                    <h2><a href="./feature-pg/feature.html">Features</a></h2>
+                    <h2><a href="./Blog/blog.html">Verify</a></h2>
+                    <h2><a href="./contact/contact.html">Contact</a></h2>
+                    <h2><a href="./log in/Login.html">Sign In</a></h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <br>
+    <br>
+
+    <main>
+        <div class="big-wrapper light">
+            <div class="popupBG"></div>
+            <!-- <div class="popup">
+                <div class="contentbox">
+                    <div class="close">&times;</div>
+                    <div class="imgbx">
+                        <div class="img-div"><img src="newcourse.jpg" alt="NEW COURSE" class="src" loading="lazy"></div>
+                        <div class="content">
+                            <div>
+                                <h2>NEW COURSES AVAILABLE</h2>
+                                <p>What are your plans for 2022? Want to upgrade your skills? Upskill this year, become the awesome version of yourself with our concise courses and experienced instructors. What are you waiting for? Sign up now!
+                                </p>
+                                <a href="./Course/Courses.html">GO TO COURSES</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="showcase-area">
+                <div class="container">
+                    <div class="left">
+                        <div class="big-title">
+                            <h1>Redefining Trust,</h1>
+                            <h1>Securing the Future.</h1>
+                        </div>
+                        <p class="text">
+                            Empowering the Future with Trusted Credentials.CertiChain is here to transform the way certificates are issued, verified, and trusted worldwide.Your journey towards a secure, tamper-proof education starts here.                        </p>
+                        <div class="cta">
+                            <a href="log in/Login.html" class="btn">Get started</a>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <!-- <img src="./img/person.png" alt="Person Image" class="person" loading="lazy"/> -->
+                        <img src="./img/3 (2).png" alt="Person Image" class="person" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- dark mode button -->
+
+            <div class="dark-mode dark_light_btn_desktop">
+                <button class="toggle-btn">
+                    <i class="far fa-moon"></i>
+                    <i class="far fa-sun"></i>
+                </button>
+            </div>
+
+        </div>
+    </main>
+    <!-- welcome section -->
+    <section class="welcome" id="welcome">
+        <div class="container">
+
+
+
+            <!--Added Animated Hover Link-->
+            <div class="title title-md">
+
+                <h3>What we offer</h3>
+                <div class="line"></div>
+            </div>
+            <!--Added Animated Hover Link-->
+
+
+            <div class="row">
+                <div>
+                    <div class="item">
+                        <span><i class="fas fa-check-circle"></i></span>
+                        <p class="lg-text">Verification</p>
+                    </div>                    
+                    <div class="item">
+                        <span><i class="fas fa-universal-access"></i></span>
+                        <p class="lg-text">Accessibility</p>
+                    </div>
+                    <div class="item">
+                        <span><i class="fas fa-shield-alt"></i></span>
+                        <p class="lg-text">Security</p>
+                    </div>
+                    
+                    <div class="item">
+                        <span><i class="fas fa-expand-arrows-alt"></i></span>
+                        <p class="lg-text">Scalability</p>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="title title-sm">
+                        <h3>issue certificates?</h3>
+                    </div>
+                    <p class="lg-text">Join CertiChain</p>
+                    <!-- ************** Changes are made after asking the mentor ********** -->
+                    <a href="./log in/Login.html">Signup here <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of welcome section -->
+
+<!-- How CertiChain Works -->
+<section class="why" id="why">
+    <div class="container">
+        <!-- Title Section -->
+        <div class="title title-md">
+            <h3>How CertiChain Works</h3>
+            <div class="line"></div>
+        </div>
+
+        <p class="text">
+            CertiChain revolutionizes certificate issuance and verification through blockchain technology, ensuring trust, security, and immutability for institutions and users.
+        </p>
+
+        <div class="row">
+            <!-- First Section -->
+            <div class="item">
+                <div class="item-img"><img src="img/Online Registration.gif" alt="Verification" loading="lazy" /></div>
+                <div class="item-body">
+                    <a href="#"><h3>Institution Registration & Verification</h3></a>
+                    <p class="text">
+                        Institutions register on CertiChain with official documents and accreditation details. The system automatically verifies the institution through authoritative external databases to ensure legitimacy.
+                    </p>
+                    <a href="#" class="btn primary-btn why-btn" style="display:flex; justify-content:center">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Second Section -->
+            <div class="item">
+                <div class="item-img"><img src="img/Boy explaining about online account login.gif" alt="Certificate Issuance" loading="lazy"/></div>
+                <div class="item-body">
+                    <a href="#"><h3>Certificate Issuance & Blockchain Registration</h3></a>
+                    <p class="text">
+                        After verification, institutions issue certificates that are digitally signed and registered on the blockchain, ensuring that they are tamper-proof and easily verifiable.
+                    </p>
+                    <a href="#" class="btn primary-btn why-btn" style="display:flex; justify-content:center">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Third Section -->
+            <div class="item">
+                <div class="item-img"><img src="img/Verification of papers and documents.gif" alt="Certificate Verification" loading="lazy"/></div>
+                <div class="item-body">
+                    <a href="#"><h3>Certificate Verification & Validation</h3></a>
+                    <p class="text">
+                        Users or organizations can easily verify the authenticity of certificates on CertiChain by accessing the blockchain, ensuring that the certificates are genuine and unaltered.
+                    </p>
+                    <a href="#" class="btn primary-btn why-btn" style="display:flex; justify-content:center">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- end of why section -->
+
+    <!-- online course -->
+ 
+    <!-- end of online course -->
+
+    <script src="./js/script1.js"></script>
+
+    <!-- skill section -->
+    <section class="skill">
+        <div class="container">
+    
+            <!--Added Animated Hover Link-->
+            <div class="title title-md">
+                <h3> Build Trust with CertiChain</h3>
+                <div class="line"></div>
+            </div>
+            <!--Added Animated Hover Link-->
+    
+            <div class="row">
+                <div>
+                    <div class="title title-sm">
+                        <h3>Secure and Transparent Verification</h3>
+                    </div>
+    
+                    <p class="text">CertiChain empowers institutions and individuals with secure and tamper-proof certificates. Build trust in your credentials with blockchain-backed verification.</p>
+                    <p class="text">Take the first step toward a decentralized and reliable certificate management system. <a href="./log in/Login.html"><span style="color: cornflowerblue; font-weight: 500; background-color: white;">JOIN NOW</span></a> to experience the future of secure certification with CertiChain.</p>
+                    <a href="#" class="btn primary-btn">Learn More</a>
+                </div>
+                <div>
+                    <div class="img-container">
+                        <img src="img/1 (3).jpg" alt="CertiChain - Secure Verification" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- end of skill section -->
+
+    <!-- counter section -->
+    <section class="counter">
+        <div class="row container">
+            <div class="item">
+                <div class="title title-sm">
+                    <h3>Institutions Registered</h3>
+                </div>
+                <span class="num" id="counting">20</span>
+            </div>
+            <div class="item">
+                <div class="title title-sm">
+                    <h3>Certificates Issued</h3>
+                </div>
+                <span class="num">13</span>
+            </div>
+            <div class="item">
+                <div class="title title-sm">
+                    <h3>Validations Completed</h3>
+                </div>
+                <span class="num">125</span>
+            </div>
+            <div class="item">
+                <div class="title title-sm">
+                    <h3>Verified Users</h3>
+                </div>
+                <span class="num">470</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- end of counter section -->
+
+   
+
+    <script src="./js/script2.js"></script>
+
+    <!-- review section ends -->
+
+    <!--Testimonials-->
+    <section id="testimonials">
+        <!--heading-->
+        <div class="grid-container">
+            <div class="testimonial-heading testimonial-row">
+                <h1>Why Our Users Trust CertiChain</h1><br>
+            </div>
+            <!--testimonials-box-container-->
+            <div class="testimonial-box-container testimonial-row">
+                <!--BOX-1-->
+                <div class="testimonial-box">
+                    <!--top-->
+                    <div class="box-top">
+                        <!--profile-->
+                        <div class="profile">
+                            <!--img-->
+                            <div class="profile-img">
+                                <img src="img/pp1.jpg" loading="lazy" />
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Emma Johnson</strong>
+                                <span>@emmaj</span>
+                            </div>
+                        </div>
+                        <!--reviews-->
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </div>
+                    <!--Comments-->
+                    <div class="client-comment">
+                        <p>CertiChain revolutionized how we verify certificates in our institution. The blockchain-based solution ensures that our issued certificates are secure and tamper-proof.</p>
+                    </div>
+                </div>
+                <!--BOX-2-->
+                <div class="testimonial-box">
+                    <!--top-->
+                    <div class="box-top">
+                        <!--profile-->
+                        <div class="profile">
+                            <!--img-->
+                            <div class="profile-img">
+                                <img src="img/pp2.jpg" loading="lazy" />
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Liam Brown</strong>
+                                <span>@liambrown</span>
+                            </div>
+                        </div>
+                        <!--reviews-->
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </div>
+                    <!--Comments-->
+                    <div class="client-comment">
+                        <p>The validation process is seamless and saves a lot of time. It has drastically reduced the paperwork in our organization and improved efficiency.</p>
+                    </div>
+                </div>
+                <!--BOX-3-->
+                <div class="testimonial-box">
+                    <!--top-->
+                    <div class="box-top">
+                        <!--profile-->
+                        <div class="profile">
+                            <!--img-->
+                            <div class="profile-img">
+                                <img src="img/pp3.jpg" loading="lazy" />
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Sophia Carter</strong>
+                                <span>@sophiac</span>
+                            </div>
+                        </div>
+                        <!--reviews-->
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </div>
+                    <!--Comments-->
+                    <div class="client-comment">
+                        <p>CertiChain has made certificate verification so easy. The blockchain technology ensures trust and authenticity, and I’m confident in the process every time.</p>
+                    </div>
+                </div>
+                <!--BOX-4-->
+                <div class="testimonial-box">
+                    <!--top-->
+                    <div class="box-top">
+                        <!--profile-->
+                        <div class="profile">
+                            <!-- img-->
+                            <div class="profile-img">
+                                <img src="img/pp4.jpg" loading="lazy" />
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Noah Wilson</strong>
+                                <span>@noahw</span>
+                            </div>
+                        </div>
+                        <!--reviews-->
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </div>
+                    <!--Comments-->
+                    <div class="client-comment">
+                        <p>Integrating CertiChain into our platform has been a game changer. Our users love the transparency and security it brings to certificate verification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+ <footer>
+        <div class="details" id="col1">
+            <h3 class="lg-text">Quick Link</h3>
+            <hr>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html">About Us</a>
+                <!-- <a href="Course/Courses.html">Courses</a> -->
+                <a href="index.html">Features</a>
+                <!-- <a href="Blog/blog.html">Blogs</a> -->
+                <a href="#details">Contact</a>
+            </div>
+        </div>
+        
+        
+                <div class="details" id ="details">
+                    <h3 class="lg-text">Find Us</h3>
+                    <hr>
+                    <div class="footer-contact-info">
+                        <div class="map">
+                            <span><ion-icon class="i" name="location-sharp"></ion-icon></span>
+                            <span>Kerala,India</span>
+                        </div>
+                        <div class="phone">
+                            <span><ion-icon class="i" name="call-sharp"></ion-icon></span>
+                            <span>1234-567-891</span>
+                        </div>
+                        <div class="email">
+                            <span><ion-icon class="i" name="paper-plane-sharp"></ion-icon></i></span>
+                            <span>info@certichain.com</span>
+                        </div>
+                        <div class="mail">
+                            <span><ion-icon class="i" name="mail-unread-sharp"></ion-icon></span>
+                            <span>certichainwebsite@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr">
+            <ul class="footer-social-links">
+                <li class="flex">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="flex">
+                    <a href="htt"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="flex">
+                    <a href="ht"><i class="fab fa-youtube"></i></a>
+                </li>
+            </ul>
+        
+            <p class="footer-text">Copyright &copy; 2025. Designed by <span>Certichain</span>. All Rights Reserved.</p>
+        </footer>
+    <!--Testimonials ends-->
+    <!-- <footer>
+        <div class="row container">
+            <div>
+                <img src="img/v.png" alt="">
+                <p class="text">“BigB will truly help to democratize education.We believe instead of focusing on education alone.BigB is in the business of reaching learners and changing lives.”</p>
+                <ul class="footer-social-links">
+                    <li class="flex">
+                        <a href="#"><i class = "fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="flex">
+                        <a href="#"><i class = "fab fa-twitter"></i></a>
+                    </li>
+                    <li class="flex">
+                        <a href="#"><i class = "fab fa-instagram"></i></a>
+                    </li>
+                    <li class="flex">
+                        <a href="#"><i class = "fab fa-google"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="lg-text">Information</h3>
+                <div class="footer-links">
+                    <a href="#">Registration</a>
+                    <a href="#">Popular Courses</a>
+                    <a href="#">Academic Schedule</a>
+                    <a href="#">Extra Facilities</a>
+                    <a href="./Events/events.html">Events</a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="lg-text">Courses</h3>
+                <div class="footer-links">
+                    <a href="#">Business Administration</a>
+                    <a href="#">Arts & Humanities</a>
+                    <a href="#">Science & Technology</a>
+                    <a href="#">Economics & Finance</a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="lg-text">Have a Question?</h3>
+                <div class="footer-contact-info">
+                    <div>
+                        <span><i class = "fas fa-map-marker-alt"></i></span>
+                        <span>Exist Somewhere in BHARAT, Earth</span>
+                    </div>
+                    <div>
+                        <span><i class = "fas fa-phone"></i></span>
+                        <span>1234-567-891</span>
+                    </div>
+                    <div>
+                        <span><i class = "fas fa-paper-plane"></i></span>
+           
+        
+        </div>
+            <div class="footer-links">
+                <h4 style="display: flex; justify-content: center;">follow us</h4>
+
+                <div class="social-links" style="display: flex; justify-content: center;">
+                    <a href="#" style="padding: 5px;"><i class="fab fa-google"></i></a>
+                    <a href="#" style="padding: 5px;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="padding: 5px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="padding: 5px;"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        <p class="footer-text">Copyright &copy; 2021. Designed by <span>BigB</span>. All Rights Reserved.</p>
+  </footer>                     <span>info@BigB.com</span>
+                    </div>
+                    <div>
+                        <span><i class = "fas fa-envelope"></i></span>
+                        <span>bigbeduwebsite@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-text">Copyright &copy; 2021. Designed by <span>BigB</span>. All Rights Reserved.</p>
+    </footer> -->
+    
+
+<!-- 
+    <footer class="footer">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="footer-col mx-4" style="margin-right: 25px;">
+                    <h4 style="padding-bottom: 25px; padding-left: 5px;">About Us</h4>
+                    <p class="foot-text">“BigB will truly help to democratize education. We believe instead of focusing on education alone. BigB is in the business of reaching learners and changing lives.”</p>
+
+                </div>
+                <div class="footer-col " style="margin-left: 40px;">
+                    <h4 style="padding-left: 24px; padding-bottom: 25px;">Information</h4>
+                    <div class="infor">
+                        <ul>
+                            <li><a href="#">→ Registration</a></li>
+                            <li><a href="#">→ Popular Courses</a></li>
+                            <li><a href="#">→ Academic Schedule</a></li>
+                            <li><a href="#">→ Extra Facilities</a></li>
+                            <li><a href="./Events/events.html">→ Events</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 style="padding-left: 24px; padding-bottom: 25px;">Information</h4>
+                    <div class="infor">
+                        <ul>
+                            <li><a href="#">→ Business Administration</a></li>
+                            <li><a href="#">→ Arts & Humanities</a></li>
+                            <li><a href="#">→ Science & Technology</a></li>
+                            <li><a href="#">→ Economics & Finance</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 style="padding-bottom: 25px;">Have a question ?</h4>
+                    <div class="infor">
+                        <ul>
+                            <li class="loc">
+                                <span><i class="fas fa-map-marker-alt" style="color: red;"></i><a href="#"> Exist
+                                        Somewhere in BHARAT</a></span>
+
+                            </li>
+                            <li>
+                                <span><i class="fas fa-phone" style="color: rgb(91, 221, 91);"></i><a href="#">
+                                        1234-567-891</span>
+                            </li>
+                            </a>
+
+                            <li><span><i class="fas fa-paper-plane" style="color: rgb(0, 170, 255);"></i> <a
+                                        href="#">info@BigB.com</span></li>
+                            </a>
+
+                            <li><span><i class="fas fa-envelope" style="color: yellow;"></i> <a
+                                        href="#">bigbeduwebsite@gmail.com</span></li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="footer-col">
+            <div class="social-links">
+                <a href="#" class="ggl"><i class="fab fa-google"></i></a>
+                <a href="#" class="fac"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="ins"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="twi"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div> -->
+        <!-- <div class="foot-line"></div>
+        </div>
+        <div class="footer-links">
+
+            <h4 style="display: flex; justify-content: center; padding-top:1.5rem">follow us</h4>
+            <div class="social-links" style="display: flex; justify-content: center; padding-top:5px ;">
+
+                <a href="#" style="padding: 2px;"><i class="fab fa-google"></i></a>
+                <a href="#" style="padding: 2px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="padding: 2px;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="padding: 2px;"><i class="fab fa-twitter"></i></a>
+
+                <a href="#" style="padding: 2px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/channel/UCRkYp3SkqvR5OD8YiTqVEbQ" style="padding: 2px;"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/beasidehustler/" style="padding: 2px;"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/Sidehustlers" style="padding: 2px;"><i class="fab fa-twitter"></i></a>
+
+            </div>
+        </div>
+        <p class="footer-text">Copyright &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>. Designed by<a href="#" style="color: var(--cyan); text-transform: none;">BigB.</a>All Rights Reserved.
+        </p>
+    </footer> -->
+
+
+
+    <!-- end of footer -->
+
+
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- slick js -->
+    <!-- <script src="slick-1.8.1/slick/slick.js"></script> -->
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+    <!-- JavaScript Files -->
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="./app.js"></script>
+    <script src="./js/script3.js"></script>
+    <script src="./js/script4.js"></script>
+    <script src="./js/preloader.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./js/FloatingButton.js"></script>
+    <!--Start of chatbot code-->
+    <script type="text/javascript">
+            window.__be = window.__be || {};
+            window.__be.id = "62922174f3724900077ac367";
+            (function () {
+                var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+                be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+            })();
+        </script>
+        <!-- End of ChatBot code -->
+
+
+</body>
+
+</html>
