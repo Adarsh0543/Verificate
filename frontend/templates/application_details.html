@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institution Application Details</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Institution Application Details</h1>
+    <table>
+      <tr>
+        <th>Field</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Institution Name</td>
+        <td>{{ institution.name }}</td>
+      </tr>
+      <tr>
+        <td>Affiliation</td>
+        <td>{{ institution.affiliation }}</td>
+      </tr>
+      <tr>
+        <td>Registration Number</td>
+        <td>{{ institution.reg_number }}</td>
+      </tr>
+      <tr>
+        <td>Date of Establishment</td>
+        <td>{{ institution.date_of_establishment }}</td>
+      </tr>
+      <tr>
+        <td>Institution Type</td>
+        <td>{{ institution.institution_type }}</td>
+      </tr>
+      <tr>
+        <td>Street Address</td>
+        <td>{{ institution.street_address }}</td>
+      </tr>
+      <tr>
+        <td>City</td>
+        <td>{{ institution.city }}</td>
+      </tr>
+      <tr>
+        <td>State</td>
+        <td>{{ institution.state }}</td>
+      </tr>
+      <tr>
+        <td>Postal Code</td>
+        <td>{{ institution.postal_code }}</td>
+      </tr>
+      <tr>
+        <td>Country</td>
+        <td>{{ institution.country }}</td>
+      </tr>
+      <tr>
+        <td>Official Email</td>
+        <td>{{ institution.official_email }}</td>
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td>{{ institution.phone_number }}</td>
+      </tr>
+      <tr>
+        <td>Administrator Name</td>
+        <td>{{ institution.admin_name }}</td>
+      </tr>
+      <tr>
+        <td>Administrator Designation</td>
+        <td>{{ institution.admin_designation }}</td>
+      </tr>
+      <tr>
+        <td>Administrator Email</td>
+        <td>{{ institution.admin_email }}</td>
+      </tr>
+      <tr>
+        <td>Administrator Phone</td>
+        <td>{{ institution.admin_phone }}</td>
+      </tr>
+      <tr>
+        <td>Login Email</td>
+        <td>{{ institution.email }}</td>
+      </tr>
+    </table>
+    <div class="actions">
+      
+      <button class="verify-btn" data-id="{{ institution.institution_id }}">✔ Verify</button>
+      <!-- Updated Reject button as a link to the rejection form -->
+      <a class="action-button reject-button" href="{{ url_for('reject_institution', institution_id=institution.institution_id) }}">✖ Reject</a>
+    </div>
+  </div>
+  
+  <script>
+    document.querySelector('.verify-btn').addEventListener('click', async function(e) {
+      e.preventDefault();
+      const institutionId = this.getAttribute('data-id');
+      if (confirm("Are you sure you want to verify this institution?")) {
+        try {
+          const response = await fetch(`/verify_institution/${institutionId}`, { method: 'POST' });
+          const result = await response.json();
+          if (result.success) {
+            alert("Institution verified successfully!");
+            window.location.href = "/admin_dashboard"; 
+          } else {
+            alert("Error: " + result.error);
+          }
+        } catch (error) {
+          console.error("Error verifying institution:", error);
+          alert("An unexpected error occurred.");
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+  

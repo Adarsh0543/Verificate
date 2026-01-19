@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institution Details  </title>
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}"> -->
+  <style>
+    /* Basic styling for the details page */
+    body {
+      font-family: Arial, sans-serif;
+      background: #66A5AD;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      width: 40%;
+      background: #f1f1f1;
+    }
+    td {
+      width: 40%;
+      background: #f1f1f1;
+    }
+    .actions {
+      text-align: center;
+    }
+    .actions button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Institution Details</h1>
+    {% if institution %}
+    <table>
+      <tr>
+        <th>Institution Name</th>
+        <td>{{ institution.institutionName }}</td>
+      </tr>
+      <tr>
+        <th>Affiliation</th>
+        <td>{{ institution.affiliation }}</td>
+      </tr>
+      <tr>
+        <th>Registration Number</th>
+        <td>{{ institution.regNumber }}</td>
+      </tr>
+      <tr>
+        <th>Date of Establishment</th>
+        <td>{{ institution.dateOfEstablishment }}</td>
+      </tr>
+      <tr>
+        <th>Institution Type</th>
+        <td>{{ institution.institutionType }}</td>
+      </tr>
+      <tr>
+        <th>Street Address</th>
+        <td>{{ institution.streetAddress }}</td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td>{{ institution.city }}</td>
+      </tr>
+      <tr>
+        <th>State</th>
+        <td>{{ institution.state }}</td>
+      </tr>
+      <tr>
+        <th>Postal Code</th>
+        <td>{{ institution.postalCode }}</td>
+      </tr>
+      <tr>
+        <th>Country</th>
+        <td>{{ institution.country }}</td>
+      </tr>
+      <tr>
+        <th>Official Email</th>
+        <td>{{ institution.officialEmail }}</td>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td>{{ institution.phoneNumber }}</td>
+      </tr>
+      <tr>
+        <th>Administrator Name</th>
+        <td>{{ institution.adminName }}</td>
+      </tr>
+      <tr>
+        <th>Administrator Designation</th>
+        <td>{{ institution.adminDesignation }}</td>
+      </tr>
+      <tr>
+        <th>Administrator Email</th>
+        <td>{{ institution.adminEmail }}</td>
+      </tr>
+      <tr>
+        <th>Administrator Phone</th>
+        <td>{{ institution.adminPhone }}</td>
+      </tr>
+    </table>
+    {% else %}
+      <p>Institution not registered on blockchain.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

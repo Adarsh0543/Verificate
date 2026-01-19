@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Certificate  </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #8bbcec;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 400px;
+      background: #fff;
+      padding: 60px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 380px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .error {
+      color: red;
+      margin-bottom: 15px;
+    }
+  </style>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Verify Certificate</h2>
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+    <form action="{{ url_for('verify_certificate') }}" method="POST">
+      <input type="text" name="cert_id" placeholder="Enter Certificate ID" required>
+      <button type="submit">Verify</button>
+    </form>
+  </div>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <script>
+      window.onload = function() {
+        {% for category, message in messages %}
+          swal({
+            title: "{{ category|capitalize }}",
+            text: "{{ message }}",
+            icon: "{{ 'error' if category == 'danger' else 'info' }}",
+            button: "OK"
+          });
+        {% endfor %}
+      };
+    </script>
+  {% endif %}
+{% endwith %}  
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Certificate  </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+    <script defer src="{{ url_for('static', filename='js/verify.js') }}"></script>
+</head>
+<body>
+    <section class="container">
+        <h2>Verify a Certificate</h2>
+        <form id="verify-form">
+            <input type="text" id="verifyCertId" placeholder="Enter Certificate ID" required>
+            <button class="issue-btn" type="submit">Verify</button>
+        </form>
+
+        <!-- Verification status -->
+        <p id="certStatus"></p>    
+
+        <!-- View Details button (hidden initially) -->
+        <a id="viewDetailsBtn" class="verify-btn" style="display: none;">View Details</a>
+
+        <!-- Button to go back to Issue Certificate page -->
+        <button class="verify-btn" onclick="window.location.href='/'">Back to Issue Certificate</button>
+    </section>
+</body>
+</html>

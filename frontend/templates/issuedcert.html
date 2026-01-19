@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Issued Certificates  </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #66A5AD;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #C4DFE6;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;  
+      text-align: left;
+    }
+    th {
+      background: #f1f1f1;
+    }
+    tr {
+      background: #f1f1f1;
+    }
+    .action-button {
+      padding: 5px 10px;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .view-button {
+      background-color: #28a745;
+    }
+    .view-button:hover {
+      background-color: #218838;
+    }
+    .download-button {
+      background-color: #007bff;
+    }
+    .download-button:hover {
+      background-color: #0056b3;
+    }
+    .revoke-button {
+      background-color: #dc3545;
+    }
+    .revoke-button:hover {
+      background-color: #c82333;
+    }
+    h1{
+      text-align: center;
+    }
+  </style>
+  <!-- Include SweetAlert (v1) -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Issued Certificates</h1>
+    {% if certificates %}
+    <table>
+      <thead>
+        <tr>
+          <th>Certificate ID</th>
+          <th>Student Name</th>
+          <th>Course</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for certificate in certificates %}
+        <tr>
+          <td>{{ certificate.cert_id }}</td>
+          <td>{{ certificate.student_name }}</td>
+          <td>{{ certificate.course }}</td>
+          <td>
+            <a class="action-button view-button" href="{{ url_for('certificate_details', cert_id=certificate.cert_id) }}">View Details</a>
+            <a class="action-button download-button" href="{{ url_for('download_certificate', cert_id=certificate.cert_id) }}" target="_blank">Download</a>
+            <button class="action-button revoke-button" onclick="confirmRevoke('{{ certificate.cert_id }}')">Revoke</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <p>No certificates issued yet.</p>
+    {% endif %}
+  </div>
+
+  <script>
+    // Function to display confirmation and, if confirmed, call the revoke route
+    function confirmRevoke(certId) {
+      swal({
+        title: "Are you sure?",
+        text: "This action cannot be undone and once certificate is revoked it can't be verified later.",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willRevoke) => {
+        if (willRevoke) {
+          // Send a POST request to the revoke certificate route
+          fetch(`/revoke_certificate_institution/${certId}`, {
+            method: "POST"
+          })
+          .then(response => response.json())
+          .then(data => {
+            if(data.success) {
+              swal("Certificate revoked successfully.", {
+                icon: "success",
+              }).then(() => {
+                location.reload();
+              });
+            } else {
+              swal("Error", data.error || "Failed to revoke certificate.", "error");
+            }
+          })
+          .catch(error => {
+            swal("Error", "Error revoking certificate: " + error, "error");
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

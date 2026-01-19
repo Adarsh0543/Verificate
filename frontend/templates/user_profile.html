@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile  </title>
+  <style>
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #66A5AD 0%, #8bbcec 100%);
+        margin: 0;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 30px auto;
+        background: rgba(199, 199, 199, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        backdrop-filter: blur(10px);
+    }
+  
+    .section {
+        margin-bottom: 32px;
+        padding: 24px;
+        background: #fdfdfd;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+    }
+  
+    .section:hover {
+        transform: translateY(-2px);
+    }
+  
+    .section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+        color: #192e3a;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #66A5AD;
+        display: inline-block;
+    }
+  
+    .info-group {
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+        margin: 8px 0;
+        border-radius: 6px;
+        transition: background 0.2s ease;
+    }
+  
+    .info-group:hover {
+        background: #f8f9fa;
+    }
+  
+    .info-group label {
+        width: 200px;
+        font-weight: 600;
+        color: #4a5568;
+        font-size: 0.95rem;
+    }
+  
+    .info-group span {
+        flex: 1;
+        color: #2d3748;
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
+  
+    .button-container {
+        text-align: right;
+        margin-top: 24px;
+    }
+  
+    .button-container button {
+        background: #66A5AD;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+  
+    .button-container button:hover {
+        background: #4d8b95;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(102, 165, 173, 0.3);
+    }
+  
+    @media (max-width: 768px) {
+        .container {
+            padding: 24px;
+            margin: 20px;
+        }
+  
+        .info-group {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+  
+        .info-group label {
+            width: 100%;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+  
+        .info-group span {
+            width: 100%;
+            font-size: 1rem;
+        }
+  
+        .button-container button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+  
+    @media (max-width: 480px) {
+        body {
+            padding: 12px;
+        }
+  
+        .section {
+            padding: 18px;
+        }
+  
+        .section h2 {
+            font-size: 1.3rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Certificate ID Section -->
+    <div class="section">
+      <h2>User ID</h2>
+      <div class="info-group">
+        <span>{{ user_id }}</span>
+      </div>
+    </div>
+
+    <!-- Personal Information Section -->
+    <div class="section">
+      <h2>Personal Information</h2>
+      <div class="info-group">
+        <label>Full Name:</label>
+        <span>{{ user_data.full_name }}</span>
+      </div>
+      <div class="info-group">
+        <label>Date of Birth:</label>
+        <span>{{ user_data.date_of_birth }}</span>
+      </div>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="section">
+      <h2>Contact Information</h2>
+      <div class="info-group">
+        <label>Street Address:</label>
+        <span>{{ user_data.street_address }}</span>
+      </div>
+      <div class="info-group">
+        <label>City:</label>
+        <span>{{ user_data.city }}</span>
+      </div>
+      <div class="info-group">
+        <label>State/Province:</label>
+        <span>{{ user_data.state }}</span>
+      </div>
+      <div class="info-group">
+        <label>Postal Code:</label>
+        <span>{{ user_data.postal_code }}</span>
+      </div>
+      <div class="info-group">
+        <label>Official Email:</label>
+        <span>{{ user_data.official_email }}</span>
+      </div>
+      <div class="info-group">
+        <label>Phone Number:</label>
+        <span>{{ user_data.phone_number }}</span>
+      </div>
+      <div class="info-group">
+        <label>Country:</label>
+        <span>{{ user_data.country }}</span>
+      </div>
+    </div>
+
+    <!-- Login Credentials Section -->
+    <div class="section">
+      <h2>Login Credentials</h2>
+      <div class="info-group">
+        <label>Email for Login:</label>
+        <span>{{ login_data.login_email }}</span>
+      </div>
+      <div class="button-container">
+        <button onclick="location.href='{{ url_for('reset_password') }}'">Reset Password</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

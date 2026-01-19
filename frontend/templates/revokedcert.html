@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revoked Certificates  </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #66A5AD;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #C4DFE6;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;  
+      text-align: left;
+    }
+    th {
+      background: #f1f1f1;
+    }
+    tr {
+      background: #f1f1f1;
+    }
+    .action-button {
+      padding: 5px 10px;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .view-button {
+      background-color: #28a745;
+    }
+    .view-button:hover {
+      background-color: #218838;
+    }
+    .download-button {
+      background-color: #007bff;
+      margin-left: 5px;
+    }
+    .download-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Revoked Certificates</h1>
+    {% if certificates %}
+    <table>
+      <thead>
+        <tr>
+          <th>Certificate ID</th>
+          <th>Student email</th>
+          <th>Course</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for certificate in certificates %}
+        <tr>
+          <td>{{ certificate.cert_id }}</td>
+          <td>{{ certificate.email }}</td>
+          <td>{{ certificate.course }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <p>No revoked certificates found.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Certificate of Completion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', serif;
+      background: #f5f5f5;
+    }
+
+    .certificate-container {
+      width: 1000px;
+      height: 700px;
+      margin: 50px auto;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+    .top-curve {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: none;
+      z-index: 1;
+    }
+    .top-curve svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Golden curved shape at bottom using SVG */
+    .bottom-curve {
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: none;
+      z-index: 1;
+    }
+    .bottom-curve svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Subtle pattern overlay */
+    .pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(rgba(255,255,255,0.1) 15%, transparent 16%) 0 0,
+        radial-gradient(rgba(255,255,255,0.1) 15%, transparent 16%) 8px 8px;
+      background-color: #ffffff;
+      background-size: 16px 16px;
+      opacity: 0.15;
+      z-index: 2;
+    }
+
+    .content {
+      position: relative;
+      z-index: 3;
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 100px;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 48px;
+      color: #2c3e50;
+    }
+    .subtitle {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    .recipient {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 30px 0;
+      color: #192e3a;
+    }
+    .description {
+      font-size: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      line-height: 1.4;
+      color: #555;
+    }
+    .date {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .footer-text {
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      color: #2c3e50;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+  <div class="certificate-container">
+    <!-- Top golden curved shape -->
+    <div class="top-curve">
+      <svg viewBox="0 0 1000 200">
+        <path d="M0,100 Q500,-100 1000,100 L1000,0 L0,0 Z" fill="#f1c40f"/>
+      </svg>
+    </div>
+
+    <!-- Subtle pattern overlay -->
+    <div class="pattern"></div>
+
+    <!-- Main content -->
+    <div class="content">
+      <h1>CERTIFICATE OF RECOGNITION</h1>
+      <p class="subtitle">This certificate is presented to</p>
+      <div class="recipient">{{ student_name }}</div>
+      <p class="description">
+        For the successfull Completion of the course {{ course }}.
+      </p>
+      <p class="date">Duration {{ course_duration}}.</p>
+      <p class="date">Given on {{ issue_date }}.</p>
+      <p class="date">Certificate Id :  {{ cert_id }}</p>  
+
+    </div>
+
+    <!-- Bottom golden curved shape -->
+    <div class="bottom-curve">
+      <svg viewBox="0 0 1000 200">
+        <path d="M0,0 Q500,200 1000,0 L1000,200 L0,200 Z" fill="#f1c40f"/>
+      </svg>
+    </div>
+
+    <!-- Footer signature -->
+    <div class="footer-text">
+      <p>{{ issuing_authority }}<br/>Institue of Engineering and Technology<br/>Kalady</p>
+    </div>
+  </div>
+</body>
+</html>

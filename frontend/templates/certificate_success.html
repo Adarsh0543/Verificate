@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Issued  </title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+  <script>
+    swal({
+      title: "Success",
+      text: "Certificate issued successfully! Certificate ID: {{ cert_id }}",
+      icon: "success",
+      button: "OK"
+    }).then(() => {
+      window.location.href = "{{ url_for('homepage') }}";
+    });
+  </script>
+</body>
+</html>

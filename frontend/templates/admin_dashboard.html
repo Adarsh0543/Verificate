@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard  </title>
+  <!-- No-cache meta tags -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" /> 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    body {
+      background-color: #f3f5f9;
+    }
+    .wrapper {
+      display: flex;
+      position: relative;
+      min-height: 100vh;
+    }
+    .wrapper .sidebar {
+      width: 250px;
+      background: #4b4276;
+      padding: 30px 0;
+      position: fixed;
+      height: 100%;
+    }
+    .wrapper .sidebar h2 {
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .wrapper .sidebar ul li {
+      padding: 15px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      cursor: pointer;
+    }
+    .wrapper .sidebar ul li a {
+      color: #bdb8d7;
+      display: block;
+    }
+    .wrapper .sidebar ul li a .fas {
+      width: 25px;
+    }
+    .wrapper .sidebar ul li:hover {
+      background-color: #594f8d;
+    }
+    .wrapper .sidebar ul li:hover a {
+      color: #fff;
+    }
+    .wrapper .sidebar .social_media {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+    .wrapper .sidebar .social_media a {
+      display: block;
+      width: 40px;
+      background: #594f8d;
+      height: 40px;
+      line-height: 45px;
+      text-align: center;
+      margin: 0 5px;
+      color: #bdb8d7;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .wrapper .main_content {
+      width: calc(100% - 250px);
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .wrapper .main_content .header {
+      padding: 20px;
+      background: #fff;
+      color: #717171;
+      border-bottom: 1px solid #e0e4e8;
+    }
+    .wrapper .main_content .info {
+      margin: 20px;
+      color: #717171;
+      line-height: 25px;
+    }
+    .wrapper .main_content .info h2 {
+      margin-bottom: 10px;
+      color: #4b4276;
+    }
+    #content-area {
+      margin-top: 20px;
+    }
+    .institution-item {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .institution-item button {
+      padding: 5px 10px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+  </style>
+  <!-- <script>
+    // Redirect to admin login if page is loaded from back button cache
+    window.addEventListener("pageshow", function(event) {
+      if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+        window.location.replace("{{ url_for('admin_login') }}");
+      }
+    });
+  </script> -->
+</head>
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2>Admin Menu</h2>
+      <ul>
+        <li id="pendingApps"><a href="#"><i class="fas fa-envelope"></i> Pending Applications</a></li>
+        <li id="acceptedInst"><a href="#"><i class="fas fa-check"></i> Accepted Institutions</a></li>
+        <li><a href="{{ url_for('revoked_certificates') }}"><i class="fas fa-ban"></i> Revoked Certificates</a></li>
+        <li><a href="{{ url_for('admin_complaints') }}"><i class="fas fa-ban"></i> Complaints</a></li>
+        <li><a href="{{ url_for('admin_logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+    <div class="main_content">
+      <div class="header">
+        <h1>Welcome, {{ session.get('admin_username') }}!</h1>
+      </div>
+      <div class="info">
+        <!-- Dynamic Content Area -->
+        <div id="content-area">
+          <h2>Dashboard Overview</h2>
+          <p>Select an option from the sidebar to view details.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include jQuery for AJAX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    // When admin clicks "Pending Applications"
+    $("#pendingApps").click(function(){
+      $.get("/pending_institutions", function(data) {
+        let html = "<h2>Pending Institution Applications</h2>";
+        if(data.length === 0) {
+          html += "<p>No pending applications.</p>";
+        } else {
+          data.forEach(function(inst) {
+            html += `<div class="institution-item">
+                        <span>${inst.name}</span>
+                        <button onclick="window.location.href='/application_details/${inst.institution_id}'">View Details</button>
+                     </div>`;
+          });
+        }
+        $("#content-area").html(html);
+      });
+    });
+
+    // When admin clicks "Accepted Institutions"
+    $("#acceptedInst").click(function(){
+      $.get("/accepted_institutions", function(data) {
+        let html = "<h2>Accepted Institutions</h2>";
+        if(data.length === 0) {
+          html += "<p>No accepted institutions.</p>";
+        } else {
+          data.forEach(function(inst) {
+            html += `<div class="institution-item">
+                        <span>${inst.name}</span>
+                        <button onclick="window.open('/institution_details/${inst.institution_id}', '_blank')">View Details</button>
+                     </div>`;
+          });
+        }
+        $("#content-area").html(html);
+      });
+    });
+  </script>
+</body>
+</html>

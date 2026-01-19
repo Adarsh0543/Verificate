@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/utility.css') }}">
+    <!--poppins-font-family------------------->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--using-Font-Awesome-------------------->
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <!-- Pop-up msg -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <!-- floating button to the top -->
+    <a href="#" id="scroll"><span></span></a>
+
+    <header>
+        <div class="header-wrapper">
+            <a href="{{ url_for('home') }}" class="logo">
+                <h3>Verificate</h3>
+            </a>            
+
+            <div class="nav d-lg">
+                <h2><a href="#">Home</a></h2>
+                <h2><a href="#welcome">Features</a></h2>
+                <h2><a href="#why">About</a></h2>
+                <!-- <h2><a href="#welcome">Features</a></h2> -->
+                <h2><a href="{{ url_for('verify_certificate') }}">Verify</a></h2>
+                <h2><a href="#details">Contact</a></h2>
+
+            </div>
+
+
+            <div class="nav d-lg">
+                <h2 style="padding-top:0;">
+                    <a href="{{ url_for('login') }}" class="btn sign-in">Login</a>
+                </h2>
+                
+                <h2 style="padding-top:0; margin-right:50px;">
+                    <a href="{{ url_for('register_selection') }}" class="btn sign-in">Register</a>
+
+                </h2>
+                
+            </div>
+
+            <div class="dropdown-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="70%" fill="currentColor" class="bi bi-list dropdown-btn"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+                <div class="dropdown-content">
+                    <h2><a href="#">Home</a></h2>
+                    <h2><a href="#welcome">About</a></h2>
+                    <h2><a href="./Course/Courses.html">Courses</a></h2>
+                    <h2><a href="./feature-pg/feature.html">Features</a></h2>
+                    <h2><a href="./Blog/blog.html">Verify</a></h2>
+                    <h2><a href="./contact/contact.html">Contact</a></h2>
+                    <h2><a href="./log in/Login.html">Sign In</a></h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <br>
+    <br>
+
+    <main>
+        <div class="big-wrapper light">
+            <div class="popupBG"></div>
+            <div class="showcase-area">
+                <div class="container">
+                    <div class="left">
+                        <div class="big-title">
+                            <h1>Redefining Trust,</h1>
+                            <h1>Securing the Future.</h1>
+                        </div>
+                        <p class="text">
+                            Empowering the Future with Trusted Credentials.Verificate is here to transform the way certificates are issued, verified, and trusted worldwide.Your journey towards a secure, tamper-proof education starts here.                        </p>
+                        <div class="cta">
+                            <a href="{{ url_for('register_selection') }}" class="btn">Get started</a>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <!-- <img src="./img/person.png" alt="Person Image" class="person" loading="lazy"/> -->
+                        <img src="{{ url_for('static', filename='img/3 (2).png') }}" alt="Certificate Image" class="person" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- dark mode button -->
+
+            <div class="dark-mode dark_light_btn_desktop">
+                <button class="toggle-btn">
+                    <i class="far fa-moon"></i>
+                    <i class="far fa-sun"></i>
+                </button>
+            </div>
+
+        </div>
+    </main>
+    <!-- welcome section -->
+    <section class="welcome" id="welcome">
+        <div class="container">
+
+
+
+            <!--Added Animated Hover Link-->
+            <div class="title title-md">
+
+                <h3>What we offer</h3>
+                <div class="line"></div>
+            </div>
+            <!--Added Animated Hover Link-->
+
+
+            <div class="row">
+                <div>
+                    <div class="item">
+                        <span><i class="fas fa-check-circle"></i></span>
+                        <p class="lg-text">Verification</p>
+                    </div>                    
+                    <div class="item">
+                        <span><i class="fas fa-universal-access"></i></span>
+                        <p class="lg-text">Accessibility</p>
+                    </div>
+                    <div class="item">
+                        <span><i class="fas fa-shield-alt"></i></span>
+                        <p class="lg-text">Security</p>
+                    </div>
+                    
+                    <div class="item">
+                        <span><i class="fas fa-expand-arrows-alt"></i></span>
+                        <p class="lg-text">Scalability</p>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="title title-sm">
+                        <h3>issue certificates?</h3>
+                    </div>
+                    <p class="lg-text">Join Verificate</p>
+                    <a href="{{ url_for('register_selection') }}" class="btn">Signup here <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of welcome section -->
+
+<!-- How Verificate Works -->
+<section class="why" id="why">
+    <div class="container">
+        <!-- Title Section -->
+        <div class="title title-md">
+            <h3>How Verificate Works</h3>
+            <div class="line"></div>
+        </div>
+
+        <p class="text">
+            Verificate revolutionizes certificate issuance and verification through blockchain technology, ensuring trust, security, and immutability for institutions and users.
+        </p>
+
+        <div class="row">
+            <!-- First Section -->
+            <div class="item">
+                <div class="item-img"><img src="{{ url_for('static', filename='img/Online Registration.gif') }}" alt="Certificate Verification" loading="lazy"/>
+                </div>
+                <div class="item-body">
+                    <a href="{{ url_for('register_selection') }}"><h3>Institution Registration & Verification</h3></a>
+                    <p class="text">
+                        Institutions register on Verificate with official documents and accreditation details. The system automatically verifies the institution through authoritative external databases to ensure legitimacy.
+                    </p>
+                    <a href="{{ url_for('register_selection') }}" class="btn primary-btn why-btn" style="display:flex; justify-content:center">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Second Section -->
+            <div class="item">
+                <div class="item-img"><img src="{{ url_for('static', filename='img/Boy explaining about online account login.gif') }}" alt="Certificate Verification" loading="lazy"/></div>
+                <div class="item-body">
+                    <a href="#"><h3>Certificate Issuance & Blockchain Registration</h3></a>
+                    <p class="text">
+                        After verification, institutions issue certificates that are digitally signed and registered on the blockchain, ensuring that they are tamper-proof and easily verifiable.
+                    </p>
+                    <a href="#" class="btn primary-btn why-btn" style="display:flex; justify-content:center">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Third Section -->
+            <div class="item">
+                <div class="item-img"><img src="{{ url_for('static', filename='img/Verification of papers and documents.gif') }}" alt="Certificate Verification" loading="lazy"/>
+                </div>
+                <div class="item-body">
+                    <a href="{{ url_for('verify_certificate') }}"><h3>Certificate Verification & Validation</h3></a>
+                    <p class="text">
+                        Users or organizations can easily verify the authenticity of certificates on Verificate by accessing the blockchain, ensuring that the certificates are genuine and unaltered.
+                    </p>
+                    <a href="{{ url_for('verify_certificate') }}" class="btn primary-btn why-btn" style="display:flex; justify-content:center">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- end of why section -->
+
+    <script src="{{ url_for('static', filename='js/script1.js') }}"></script>
+
+
+    <!-- skill section -->
+    <section class="skill">
+        <div class="container">
+    
+            <!--Added Animated Hover Link-->
+            <div class="title title-md">
+                <h3> Build Trust with Verificate</h3>
+                <div class="line"></div>
+            </div>
+            <!--Added Animated Hover Link-->
+    
+            <div class="row">
+                <div>
+                    <div class="title title-sm">
+                        <h3>Secure and Transparent Verification</h3>
+                    </div>
+    
+                    <p class="text">Verificate empowers institutions and individuals with secure and tamper-proof certificates. Build trust in your credentials with blockchain-backed verification.</p>
+                    <p class="text">Take the first step toward a decentralized and reliable certificate management system. <a href="{{ url_for('register_selection') }}"><span style="color: cornflowerblue; font-weight: 500; background-color: white;">JOIN NOW</span></a> to experience the future of secure certification with Verificate.</p>
+                    <a href="#" class="btn primary-btn">Learn More</a>
+                </div>
+                <!-- <div>
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='img/1 (3).jpg') }}" alt="Verificate - Secure Verification" loading="lazy"/>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- end of skill section -->
+
+    <!-- counter section -->
+    <section class="counter">
+        <div class="row container">
+            <div class="item">
+                <div class="title title-sm">
+                    <h3>Institutions Registered</h3>
+                </div>
+                <span class="num" id="institutions-count">0</span>
+            </div>  
+            <div class="item">
+                <div class="title title-sm">
+                    <h3>Certificates Issued</h3>
+                </div>
+                <span class="num" id="certificates-count">0</span>
+            </div>
+            <div class="item">
+                <div class="title title-sm">
+                    <h3>Validations Completed</h3>
+                </div>
+                <span class="num" id="validations-count">0</span>
+            </div>
+            <div class="item">
+                <div class="title title-sm">
+                    <h3>Verified Users</h3>
+                </div>
+                <span class="num" id="users-count">0</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- end of counter section -->
+
+   
+
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+
+
+    <!-- review section ends -->
+
+    <!--Testimonials-->
+    <section id="testimonials">
+        <!--heading-->
+        <div class="grid-container">
+            <div class="testimonial-heading testimonial-row">
+                <h1>Why Our Users Trust Verificate</h1><br>
+            </div>
+            <!--testimonials-box-container-->
+            <div class="testimonial-box-container testimonial-row">
+                <!--BOX-1-->
+                <div class="testimonial-box">
+                    <!--top-->
+                    <div class="box-top">
+                        <!--profile-->
+                        <div class="profile">
+                            <!--img-->
+                            <div class="profile-img">
+                                <img src="{{ url_for('static', filename='img/pp1.jpg') }}" loading="lazy"/>
+
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Emma Johnson</strong>
+                                <span>@emmaj</span>
+                            </div>
+                        </div>
+                        <!--reviews-->
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </div>
+                    <!--Comments-->
+                    <div class="client-comment">
+                        <p>Verificate revolutionized how we verify certificates in our institution. The blockchain-based solution ensures that our issued certificates are secure and tamper-proof.</p>
+                    </div>
+                </div>
+                <!--BOX-2-->
+                <div class="testimonial-box">
+                    <!--top-->
+                    <div class="box-top">
+                        <!--profile-->
+                        <div class="profile">
+                            <!--img-->
+                            <div class="profile-img">
+                                <img src="{{ url_for('static', filename='img/pp2.jpg') }}" loading="lazy"/>
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Liam Brown</strong>
+                                <span>@liambrown</span>
+                            </div>
+                        </div>
+                        <!--reviews-->
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </div>
+                    <!--Comments-->
+                    <div class="client-comment">
+                        <p>The validation process is seamless and saves a lot of time. It has drastically reduced the paperwork in our organization and improved efficiency.</p>
+                    </div>
+                </div>
+                <!--BOX-3-->
+                <div class="testimonial-box">
+                    <!--top-->
+                    <div class="box-top">
+                        <!--profile-->
+                        <div class="profile">
+                            <!--img-->
+                            <div class="profile-img">
+                                <img src="{{ url_for('static', filename='img/pp3.jpg') }}" loading="lazy"/>
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Sophia Carter</strong>
+                                <span>@sophiac</span>
+                            </div>
+                        </div>
+                        <!--reviews-->
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </div>
+                    <!--Comments-->
+                    <div class="client-comment">
+                        <p>Verificate has made certificate verification so easy. The blockchain technology ensures trust and authenticity, and I’m confident in the process every time.</p>
+                    </div>
+                </div>
+                <!--BOX-4-->
+                <div class="testimonial-box">
+                    <!--top-->
+                    <div class="box-top">
+                        <!--profile-->
+                        <div class="profile">
+                            <!-- img-->
+                            <div class="profile-img">
+                                <img src="{{ url_for('static', filename='img/pp4.jpg') }}" loading="lazy"/>
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Noah Wilson</strong>
+                                <span>@noahw</span>
+                            </div>
+                        </div>
+                        <!--reviews-->
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </div>
+                    <!--Comments-->
+                    <div class="client-comment">
+                        <p>Integrating Verificate into our platform has been a game changer. Our users love the transparency and security it brings to certificate verification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+ <footer>
+        <div class="details" id="col1">
+            <h3 class="lg-text">Quick Link</h3>
+            <hr>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#why">About Us</a>
+                <a href="#welcome">Features</a>
+                <a href="#details">Contact</a>
+            </div>
+        </div>
+        
+        
+                <div class="details" id ="details">
+                    <h3 class="lg-text">Find Us</h3>
+                    <hr>
+                    <div class="footer-contact-info">
+                        <div class="map">
+                            <span><ion-icon class="i" name="location-sharp"></ion-icon></span>
+                            <span>Kerala,India</span>
+                        </div>
+                        <div class="phone">
+                            <span><ion-icon class="i" name="call-sharp"></ion-icon></span>
+                            <span>1234-567-891</span>
+                        </div>
+                        <div class="email">
+                            <span><ion-icon class="i" name="paper-plane-sharp"></ion-icon></i></span>
+                            <span>info@Verificate.com</span>
+                        </div>
+                        <div class="mail">
+                            <span><ion-icon class="i" name="mail-unread-sharp"></ion-icon></span>
+                            <a href="mailto:certi0chain@gmail.com?subject=Verification%20Request" style="color:inherit; text-decoration:none;">verificate@gmail.com</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <hr class="hr">
+            <ul class="footer-social-links">
+                <li class="flex">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="flex">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="flex">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </li>
+            </ul>
+        
+            <p class="footer-text">Copyright &copy; 2025. Designed by <span>Verificate</span>. All Rights Reserved.</p>
+        </footer>
+    <!--Testimonials ends-->
+
+    <!-- end of footer -->
+ <!-- Script defining animateNumber -->
+ <script>
+    // Animate a number from 0 to targetValue in a given duration (milliseconds)
+    function animateNumber(elementId, targetValue, duration = 2000) {
+      const element = document.getElementById(elementId);
+      if (!element) return;
+      let startValue = 0;
+      let startTime = null;
+    
+      function updateNumber(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        // Calculate the current value using a linear easing function
+        const currentValue = Math.floor(startValue + targetValue * (progress / duration));
+        element.textContent = currentValue;
+        if (progress < duration) {
+          requestAnimationFrame(updateNumber);
+        } else {
+          element.textContent = targetValue; // Ensure final value is set exactly
+        }
+      }
+      requestAnimationFrame(updateNumber);
+    }
+  </script>
+  <!-- Script to fetch counts and animate -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      function fetchAndAnimateCounts() {
+        fetch("{{ url_for('get_counts') }}")
+          .then(response => response.json())
+          .then(data => {
+            console.log("Fetched counts:", data);
+            animateNumber('institutions-count', data.institutions);
+            animateNumber('certificates-count', data.certificates);
+            animateNumber('validations-count', data.validations);
+            animateNumber('users-count', data.users);
+          })
+          .catch(error => console.error("Error fetching counts:", error));
+      }
+    
+      // Optionally, trigger immediately (or use IntersectionObserver if needed)
+      fetchAndAnimateCounts();
+    });
+  </script>
+        
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- JavaScript Files -->
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="{{ url_for('static', filename='js/app1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script3.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script4.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/preloader.js') }}"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{{ url_for('static', filename='js/FloatingButton.js') }}"></script>
+       
+</body>
+
+</html>

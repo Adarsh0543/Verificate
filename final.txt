@@ -1,0 +1,18 @@
+1) The institution need to provide the informations of the institution like accreditation id or any other proofs to ensure their
+ authenticity.
+
+2)The certichain has an automatic system that queries these information with government agencies databases and through secure api's
+ and verification is done.Also certichain verifies the institutions info with certichains own databases to check if the institution
+  is already registered, this prevents fraud registration.In case of any lack of info or problems with info  automatic reigistration
+   is stopped manual verificaton by certichain team is done.
+
+3)After verification an istitution id is genrated and is stored in the blockchain along with institution details.Intially 
+institutions are added to blockchain without consensus mechanism as there is no other institutions to validate institutiions coming
+after this institution is validated by this institutionThe instituton id is given to the instiution along with the login credentials
+ie username,password and their private key and public key .upon first login they are prompted to change the password to enhance 
+security.
+
+4)The institution can signin using their credentials . where they see an insitution interface having institution details,
+certificate templates and other things.They can edit things here.
+
+5)

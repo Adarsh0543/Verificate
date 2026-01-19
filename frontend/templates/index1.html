@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Blockchain Certificate</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+    <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body>
+    <section class="container">
+        <h2>Issue  Certificate</h2>
+        <form id="issue-form">
+            <input type="text" id="certId" placeholder="Certificate ID" required>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="institution" placeholder="Institution" required>
+            <input type="date" id="date" required>
+            <button type="submit" class="issue-btn">Issue Certificate</button>
+        </form>
+         <!-- Verify Certificate Button -->
+    <button class="verify-btn" onclick="window.location.href='/verify'">Verify Certificate</button>
+    </section>
+</body>
+</html>

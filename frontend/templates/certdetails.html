@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificate Details  </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #2F3C7E;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #FBEAEB;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #adadad;
+      text-align: left;
+    }
+    th {
+      width: 40%;
+      background: #FBEAEB;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Certificate Details</h1>
+    {% if certificate %}
+    <table>
+      <tr>
+        <th>Certificate ID</th>
+        <td>{{ certificate.cert_id }}</td>
+      </tr>
+      <tr>
+        <th>Student Name</th>
+        <td>{{ certificate.student_name }}</td>
+      </tr>
+      <tr>
+        <th>Course</th>
+        <td>{{ certificate.course }}</td>
+      </tr>
+      <tr>
+        <th>Issue Date</th>
+        <td>{{ certificate.issue_date }}</td>
+      </tr>
+      <tr>
+        <th>Date of Birth</th>
+        <td>{{ certificate.dob }}</td>
+      </tr>
+      <tr>
+        <th>Course Duration</th>
+        <td>{{ certificate.course_duration }}</td>
+      </tr>
+      <tr>
+        <th>Issuing Authority</th>
+        <td>{{ certificate.issuing_authority }}</td>
+      </tr>
+      <tr>
+        <th>User Email</th>
+        <td>{{ certificate.user_email }}</td>
+      </tr>
+    </table>
+    {% else %}
+      <p>Certificate not found.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

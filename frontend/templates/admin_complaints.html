@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Complaints </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f5f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Complaints</h1>
+        {% if complaints %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Complaint ID</th>
+                    <th>User Email</th>
+                    <th>Complaint</th>
+                    <th>Submission Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comp in complaints %}
+                <tr>
+                    <td>{{ comp.complaint_id }}</td>
+                    <td>{{ comp.user_email }}</td>
+                    <td>{{ comp.complaint_text }}</td>
+                    <td>{{ comp.submission_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>No complaints submitted yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

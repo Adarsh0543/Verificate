@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Issue Certificate</title>
+  <style>
+    /* Basic styling; adjust as needed */
+    body {
+      font-family: Arial, sans-serif;
+      background: #192e3a;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    /* Flex container for the user_id input group */
+    .flex-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .flex-group input {
+      flex: 4; /* Increase textbox width */
+    }
+    .flex-group button {
+      flex: 1 0 auto; /* Do not let the button stretch */
+      padding: 8px 12px;
+      background: #28a745 !important;  /* Force green color */
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      max-width: 120px; /* Ensure the button remains small */
+    }
+    .flex-group button:hover {
+      background: #218838 !important;
+    }
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background: #0056b3;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Issue Certificate</h2>
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+    
+    <!-- Section for entering User ID with label above and fetch button to the right -->
+    <form action="{{ url_for('fetch_user', user_id='') }}" method="GET" onsubmit="this.action=this.action + document.getElementById('user_id').value;">
+      <div class="input-group">
+        <label for="user_id">User ID</label>
+        <div class="flex-group">
+          <input type="text" id="user_id" name="user_id" placeholder="Enter user id if available otherwise leave blank">
+          <button type="submit">Fetch Details</button>
+        </div>
+      </div>
+    </form>
+    
+    <!-- Main certificate issuance form -->
+    <form action="{{ url_for('issue_certificate') }}" method="POST">
+      <!-- Certificate ID is auto-generated on the server -->
+      <div class="input-group">
+        <label for="student_name">Student Name</label>
+        <input type="text" id="student_name" name="student_name" placeholder="Enter Student Name" required value="{{ user_data.name if user_data }}">
+      </div>
+      <div class="input-group">
+        <label for="user_email">User Email</label>
+        <input type="email" id="user_email" name="user_email" placeholder="Enter User Email" required value="{{ user_data.email if user_data }}">
+      </div>
+      <!-- Issue Date section removed, server will handle it -->
+      <div class="input-group">
+        <label for="dob">Student Date of Birth</label>
+        <input type="date" id="dob" name="dob" required value="{{ user_data.dob if user_data }}">
+      </div>
+      <div class="input-group">
+        <label for="course">Course</label>
+        <input type="text" id="course" name="course" placeholder="Enter Course" required>
+      </div>
+      <div class="input-group">
+        <label for="course_duration">Course Duration</label>
+        <input type="text" id="course_duration" name="course_duration" placeholder="e.g., 6 months" required>
+      </div>
+      <!-- Issuing Authority is automatically set via a hidden field -->
+      <input type="hidden" name="issuing_authority" value="{{ institution_name }}">
+      <button type="submit">Issue Certificate</button>
+    </form>
+  </div>
+</body>
+</html>

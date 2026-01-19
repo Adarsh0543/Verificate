@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Details</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+    <script defer src="{{ url_for('static', filename='js/certificate.js') }}"></script>
+</head>
+<body>
+    <section class="container">
+        <h2>Certificate Details</h2>
+
+        <!-- Loading Message -->
+        <p id="loadingMessage">🔄 Loading certificate details...</p>
+
+        <!-- Certificate Details Table -->
+        <table id="certTable" class="cert-table" style="display: none;">
+            <tr>
+                <th>Certificate ID</th>
+                <td id="certId"></td>
+            </tr>
+            <tr>
+                <th>Holder Name</th>
+                <td id="holderName"></td>
+            </tr>
+            <tr>
+                <th>Issuer</th>
+                <td id="issuer"></td>
+            </tr>
+            <tr>
+                <th>Issue Date</th>
+                <td id="issueDate"></td>
+            </tr>
+        </table>
+
+        <p id="errorMessage" class="error" style="display: none;">❌ Certificate not found.</p>
+
+        <div class="button-container">
+            <button class="issue-btn" onclick="window.location.href='/verify'">Back to Verification</button>
+            <button class="generate-btn" onclick="generateCertificate()">Generate Certificate</button>
+        </div>
+    </section>
+</body>
+</html>

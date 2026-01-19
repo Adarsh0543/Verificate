@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 30px;
+}
+
+.certificate-container {
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    padding: 40px;
+    text-align: center;
+    border: 10px solid #000;
+    background: white;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.certificate-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.certificate-details {
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.recipient-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.download-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.download-btn:hover {
+    background: #218838;
+}

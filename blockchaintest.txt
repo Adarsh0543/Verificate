@@ -1,0 +1,15 @@
+blockchain checking values using truffle console
+
+truffle console --network development
+let instance = await CertiChain.deployed();
+let certificate = await instance.getCertificate("3c714ac2-b017-409b-9eea-944c786d274e");
+console.log(certificate);
+
+
+reset blockchain
+
+truffle migrate --reset
+
+database reset
+
+python3 database_setup.py
