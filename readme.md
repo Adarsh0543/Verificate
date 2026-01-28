@@ -15,8 +15,6 @@
 - [System Architecture](#-system-architecture)
 - [Tech Stack](#-tech-stack)
 - [Key Features](#-key-features)
-- [Installation & Setup](#-installation--setup)
-- [Usage Workflow](#-usage-workflow)
 - [Screenshots](#-screenshots)
 
 ---
